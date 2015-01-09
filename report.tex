@@ -89,18 +89,25 @@
 
 %英語の概要
 \begin{eabstract}
-In current workshops for elementary school students, the popular method for teaching programming is using “Scratch”. We visited such a workshop and knew that it has a good reputation amongst for elementary school students by taking a survey. However, they don’t have many opportunities to be exposed to programming, because programming is not taught as part of the compulsory education and the scale of workshop has a limit. Therefore, we will increase opportunities to be exposed to programming for elementary school students by planning workshop which use LEGO Mindstorms and iPad.\\
+In current, "Scratch" is watched as a programming language for elementary school students. The result of a survey in programming workshop for elementary school students that we participated, all of them answered that they want to such a workshop again and more than half of their parents answered that they have their childlen learn how to use computer since elementary school student. However, they don’t have many opportunities to be exposed to programming, because programming is not taught as part of the compulsory education and the scale of workshop has a limit. Therefore, we will make a plan and carry out a programming workshop to increase the chance of elementary school students touches programming.\\%背景
 
-We did requirement analysis and peer review our app ideas. As a result, the app idea that we decided has two functions. Firstly, it can remotely control LEGO Mindstorms. Secondly, it can control LEGO Mindstorms by programming. At this stage, we are expecting elementary school students to challenge to task such as achieve a labyrinth and drawing.\\
+Thus, we made plan and carry out a programming workshop that elementary school students can enjoy and  	
+development of tablet apps available in the workshop a ploblem. In the planning of the workshop, we did requirement analysis and peer review our ideas to devise elementary school students enjoy programming. In the development of tablet apps, we decided two functions. Firstly, it can remotely control LEGO Mindstorms. Secondly, it can control LEGO Mindstorms by programming. In consequence, we determined content of workshop that draw pictures by using the app and LEGO Mindstorms.\\%課題の設定
 
- After the decision of the app idea, we made screen transition diagram of the app. Based on this diagram, we clarified definition of functions which need technical inspection for implementation. However, we took time to make presentation material and left untested inspection because of mistake of the scheduling. So, we have to proceed technical inspection on summer vacation in order to start implementation at the latter term.\\
+Determining the idea of ??app, we made a screen transition diagram. Based on it, we made state transition diagram and class diagram, and define necessary items of technical verifications. In consequence, we determined development in iOS was demand and we changed specifications to the development of the Android app. This change had a big impact that progress had been a month slow and we have to do a part of system design and technical verifications. Thus, we divided the person in charge of the implementation into radio control function, programming function and top screen. Implementation of radio control function is carried out in parallel with technical verifications for programming function.\\
 
- Thus we were discussing our goal and deliverables at first-term. However, discussion was not logical because of difference in outlook of decisions between us, so we should define words and functions of app  thoroughly. In future, we will make specification sheet based on technical inspection, and then we will do implimentation of the app and plan a workshop.
+We had touched to radio control function and conducted a survey about the app and the workshop audiences in Academic Link. We reconsider the plan based on the results of the survey.\\
+
+After Academic Link, we fixed proposal and implementation of programming function. However, before implementation of programming function, we did refactoring because the source code for the radio control function is complicated. Progress implementation of programming function was delayed because it was complicated movement and processing of objects than radio control function. However, we completed the app before final presentation.\\
+
+As future prospects, we will fix plan based on final presentation and proposal of workshop, and we are planning to carry out the programming workshop in late February in Hakodate Youth Center.
+
+
 % 英文キーワード
 \begin{ekeyword}
-Programming, Elementary school students, Workshop, LEGO Mindstorms, iPad
+Programming, Elementary school students, Workshop, LEGO Mindstorms, iOS, Android
 \end{ekeyword}
-\bunseki{小島和司}
+\bunseki{伊藤駿吾}
 \end{eabstract}
 
 \tableofcontents% 目次
@@ -507,7 +514,27 @@ LEGO Mindstormsでサッカーをしてもらう。サッカーコートを作成し、LEGO Mindstormsで
 
 
 \subsection{アプリの設計}
-まずメンバー間で開発するアプリのイメージの差異をなくすためにアプリの構成を明記する必要があったので、そのためにステートマシン図とクラス図の作成を行った。開発するアプリの振舞をメンバー間で共有するためにペーパープロトタイプをもとにステートマシン図を作成した。ステートマシン図とは状態の遷移や繊維のための条件などを表現する図で、これを用いて開発するアプリケーションの振舞を表現した。 この図を作成する目的はアプリケーションの画面遷移や特定の機能の実行するタイミングを明記し、実装時にこれを目安にしてもらうことだったが、作成当時はメンバー全体でプログラミング機能のイメージが統一されていなかったためメンバ―がそれらを補完するためにも役に立った。また、この図をもとにオブジェクトやアクティビティの関係性を示すクラス図の作成も行った。これを作成する目的は実装時に参考にすることで実装者の負担を少なくすることである。しかし、クラス図の作成は技術検証の進捗の遅れが影響し、アプリ開発開始時と同時期となってしまった。ラジコン機能に用いるライブラリのコードを参考にして記述していったが、そのコードが煩雑であったため、そのまま転用するような設計をすると実装に大きな悪影響が及ぶと考えたため、一度リファクタリングを経て既存のコードをクラス分けした。リファクタリングを行った後プログラミング機能についての作図を開始した。技術検証が完了した部分からコードをクラス図に取り込んでいったが、ここで画面を分けた際に現状のクラス分けでは問題が生じることには気付くことができなかった。アクティビティという画面ごとに存在するファイル間で値のやり取りを行うという問題で、これに関しては実装時に解決することにしてクラス図は各機能の実装の目安となるものになった。
+まずメンバー間で開発するアプリのイメージの差異をなくすためにアプリの構成を明記する必要があったので、そのためにステートマシン図とクラス図の作成を行った。開発するアプリの振舞をメンバー間で共有するためにペーパープロトタイプをもとにステートマシン図を作成した。ステートマシン図とは状態の遷移や繊維のための条件などを表現する図で、これを用いて開発するアプリケーションの振舞を表現した。
+
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=100mm]{image/statemachine.eps}
+ \end{center}
+ \caption{ステートマシン図}
+ \label{fig:one}
+\end{figure}
+
+この図を作成する目的はアプリケーションの画面遷移や特定の機能の実行するタイミングを明記し、実装時にこれを目安にしてもらうことだったが、作成当時はメンバー全体でプログラミング機能のイメージが統一されていなかったためメンバ―がそれらを補完するためにも役に立った。また、この図をもとにオブジェクトやアクティビティの関係性を示すクラス図の作成も行った。
+
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=100mm]{image/class.eps}
+ \end{center}
+ \caption{クラス図}
+ \label{fig:one}
+\end{figure}
+
+これを作成する目的は実装時に参考にすることで実装者の負担を少なくすることである。しかし、クラス図の作成は技術検証の進捗の遅れが影響し、アプリ開発開始時と同時期となってしまった。ラジコン機能に用いるライブラリのコードを参考にして記述していったが、そのコードが煩雑であったため、そのまま転用するような設計をすると実装に大きな悪影響が及ぶと考えたため、一度リファクタリングを経て既存のコードをクラス分けした。リファクタリングを行った後プログラミング機能についての作図を開始した。技術検証が完了した部分からコードをクラス図に取り込んでいったが、ここで画面を分けた際に現状のクラス分けでは問題が生じることには気付くことができなかった。アクティビティという画面ごとに存在するファイル間で値のやり取りを行うという問題で、これに関しては実装時に解決することにしてクラス図は各機能の実装の目安となるものになった。
 
 \bunseki{小島和司}
 
@@ -733,7 +760,7 @@ LEGO Mindstormsでサッカーをしてもらう。サッカーコートを作成し、LEGO Mindstormsで
 
 \subsection{諸原聖}
 
-技術検証の際に、何を持って精巧とするのか失敗とするのかを決めていなかったため、その機能が実装可能かどうかが白旗死とするまで時間をかけてしまい、その後のスケジュールが遅れてしまった。よって今後技術検証を行う場合は、それを明確に決めておく必要がある。また、実装を行っている最中に、別件でプロジェクトに参加していなかった時、メンバーが自分の書いたソースコードを読んで理解できずに実装が滞ったことから、他人が読みやすいソースコードを意識して書かなければならない重要性を学んだ。
+技術検証の際に、何を持って成功とするのか失敗とするのかを決めていなかったため、その機能が実装可能かどうかがはっきりとするまで時間をかけてしまい、その後のスケジュールが遅れてしまった。よって今後技術検証を行う場合は、それを明確に決めておく必要がある。また、実装を行っている最中に、別件でプロジェクトに参加していなかった時、メンバーが自分の書いたソースコードを読んで理解できずに実装が滞ったことから、他人が読みやすいソースコードを意識して書かなければならない重要性を学んだ。
 
 \bunseki{諸原聖}
 
