@@ -89,18 +89,25 @@
 
 %‰pŒê‚ÌŠT—v
 \begin{eabstract}
-In current workshops for elementary school students, the popular method for teaching programming is using gScratchh. We visited such a workshop and knew that it has a good reputation amongst for elementary school students by taking a survey. However, they donft have many opportunities to be exposed to programming, because programming is not taught as part of the compulsory education and the scale of workshop has a limit. Therefore, we will increase opportunities to be exposed to programming for elementary school students by planning workshop which use LEGO Mindstorms and iPad.\\
+In current, "Scratch" is watched as a programming language for elementary school students. The result of a survey in programming workshop for elementary school students that we participated, all of them answered that they want to such a workshop again and more than half of their parents answered that they have their childlen learn how to use computer since elementary school student. However, they donft have many opportunities to be exposed to programming, because programming is not taught as part of the compulsory education and the scale of workshop has a limit. Therefore, we will make a plan and carry out a programming workshop to increase the chance of elementary school students touches programming.\\%”wŒi
 
-We did requirement analysis and peer review our app ideas. As a result, the app idea that we decided has two functions. Firstly, it can remotely control LEGO Mindstorms. Secondly, it can control LEGO Mindstorms by programming. At this stage, we are expecting elementary school students to challenge to task such as achieve a labyrinth and drawing.\\
+Thus, we made plan and carry out a programming workshop that elementary school students can enjoy and  	
+development of tablet apps available in the workshop a ploblem. In the planning of the workshop, we did requirement analysis and peer review our ideas to devise elementary school students enjoy programming. In the development of tablet apps, we decided two functions. Firstly, it can remotely control LEGO Mindstorms. Secondly, it can control LEGO Mindstorms by programming. In consequence, we determined content of workshop that draw pictures by using the app and LEGO Mindstorms.\\%‰Û‘è‚Ìİ’è
 
- After the decision of the app idea, we made screen transition diagram of the app. Based on this diagram, we clarified definition of functions which need technical inspection for implementation. However, we took time to make presentation material and left untested inspection because of mistake of the scheduling. So, we have to proceed technical inspection on summer vacation in order to start implementation at the latter term.\\
+Determining the idea of ??app, we made a screen transition diagram. Based on it, we made state transition diagram and class diagram, and define necessary items of technical verifications. In consequence, we determined development in iOS was demand and we changed specifications to the development of the Android app. This change had a big impact that progress had been a month slow and we have to do a part of system design and technical verifications. Thus, we divided the person in charge of the implementation into radio control function, programming function and top screen. Implementation of radio control function is carried out in parallel with technical verifications for programming function.\\
 
- Thus we were discussing our goal and deliverables at first-term. However, discussion was not logical because of difference in outlook of decisions between us, so we should define words and functions of app  thoroughly. In future, we will make specification sheet based on technical inspection, and then we will do implimentation of the app and plan a workshop.
+We had touched to radio control function and conducted a survey about the app and the workshop audiences in Academic Link. We reconsider the plan based on the results of the survey.\\
+
+After Academic Link, we fixed proposal and implementation of programming function. However, before implementation of programming function, we did refactoring because the source code for the radio control function is complicated. Progress implementation of programming function was delayed because it was complicated movement and processing of objects than radio control function. However, we completed the app before final presentation.\\
+
+As future prospects, we will fix plan based on final presentation and proposal of workshop, and we are planning to carry out the programming workshop in late February in Hakodate Youth Center.
+
+
 % ‰p•¶ƒL[ƒ[ƒh
 \begin{ekeyword}
-Programming, Elementary school students, Workshop, LEGO Mindstorms, iPad
+Programming, Elementary school students, Workshop, LEGO Mindstorms, iOS, Android
 \end{ekeyword}
-\bunseki{¬“‡˜ai}
+\bunseki{ˆÉ“¡xŒá}
 \end{eabstract}
 
 \tableofcontents% –ÚŸ
@@ -109,18 +116,19 @@ Programming, Elementary school students, Workshop, LEGO Mindstorms, iPad
 
 \chapter{”wŒi}
 
-Œ»İAScratch ‚Æ‚¢‚¤ƒvƒƒOƒ‰ƒ~ƒ“ƒOŒ¾Œê‚ğ—˜—p‚µ‚½ƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Ìƒ[ƒNƒVƒ‡ƒbƒv‚ª’–Ú‚³‚ê‚Ä‚¢‚éBScratch ‚Æ‚Í2006 ”N‚É MIT ƒƒfƒBƒAƒ‰ƒ{‚ªŠJ”­‚µ‚½q‹ŸŒü‚¯‚ÌƒvƒƒOƒ‰ƒ~ƒ“ƒOŒ¾Œê‚ÅAğŒ•ªŠò‚âƒ‹[ƒv‚È‚Ç‚ª‘‚©‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğƒhƒ‰ƒbƒOƒAƒ“ƒhƒhƒƒbƒv‚Å‘g‚İ‡‚í‚¹‚é‚±‚Æ‚Å‹Šo“I‚ÉƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğŠw‚Ô‚±‚Æ‚ªo—ˆ‚éB—á‚¦‚ÎANPO –@lCANVAS ‚Í“Œ–k’n•û‚É‚ ‚é¬’†ŠwZAŒö–¯ŠÙ‚È‚Ç‚ğ’†S‚É Scratch ‚ÅƒIƒŠƒWƒiƒ‹‚ÌƒQ[ƒ€‚ğì‚éƒ[ƒNƒVƒ‡ƒbƒv‚ğŠJÃ‚µ‚Ä‚¨‚èA¡‚Ü‚Å‚É 26 ‰ñA–ñ 560 l‚Ìq‚Ç‚à‚½‚¿‚ªQ‰Á‚µ‚½[1]B\\
-@‚Ü‚½A•ŸˆäŒ§I]s‚ÌÉ‰A¬ŠwZ‚Å‚Í¬Šw 4 ”N¶E6 ”N¶‚ğ‘ÎÛ‚É LEGO Mindstorms ‚Æ‚¢‚¤ƒŒƒSƒuƒƒbƒN‚ğ—˜—p‚µ‚½î•ñHŠwA‰ÈŠwA”Šw‚È‚Ç—lX‚Èƒe[ƒ}‚ÌŠwK‚É–ğ—§‚Âƒƒ{ƒbƒg‹³Ş‚ğ—˜—p‚µ‚½‰ÛŠOö‹Æ‚ªs‚í‚ê‚½[2]B4 ”N¶‚ÍŠ£“d’r‚Æƒ‚[ƒ^[‚Å‘–‚é©“®Ô‚ğì¬‚µ‚Ä‘–‚ç‚¹‚é‚È‚©‚ÅAŠ£“d’r‚Ì‚Â‚È‚¬•û‚â”‚ğ•Ï‚¦‚Ä‚Ç‚¤‚µ‚½‚ç‘‚­‘–‚ç‚¹‚é‚±‚Æ‚ªo—ˆ‚é‚©‚ğ’²‚×‚é‚±‚Æ‚Å“d‹C‚Ì“­‚«‚ğŠw‚ñ‚¾B6 ”N¶‚Í“d¥Î‚Ì“±ü‚ğ—p‚¢‚ÄA“d¥Î‚Ì‹­‚³‚Ì•Ï‰»‚ğ’²‚×AŒ©‚¢‚¾‚µ‚½–â‘è‚ğ‘½–Ê“I‚É’Ç‹†‚µ‚½‚èƒƒ{ƒbƒg‚Ã‚­‚è‚ğ‚µ‚½‚è‚·‚éŠˆ“®‚ğ’Ê‚µ‚ÄA“d—¬‚Ì“­‚«‚É‚Â‚¢‚Ä‚ÌŒ©•û‚âl‚¦•û‚ğŠw‚ñ‚¾B
+„’B‚ÍŒ´“c‹³ö‚ªåÃ‚µ‚½¬Šw¶‚ğ‘ÎÛ‚É‚µ‚½ Scratch ‚ğ—˜—p‚µ‚ÄŠyŠí‚ğì‚éƒ[ƒNƒVƒ‡ƒbƒv‚ÉQ‰Á‚µ‚½[1]B‚»‚±‚Å‚Í¬Šw¶‚ª–²’†‚É‚È‚Á‚Ä Scratch ‚ÅğŒ•¶‚âƒ‹[ƒvˆ—‚ğg‚¢‚È‚ª‚çƒLƒƒƒ‰ƒNƒ^[‚ğ“®‚©‚µ‚Ä‚¢‚½B\\
+@‚³‚ç‚ÉAƒ[ƒNƒVƒ‡ƒbƒvI—¹‚És‚Á‚½ƒAƒ“ƒP[ƒg‚É‚æ‚é‚ÆAgQ‰Á‚µ‚½¬Šw¶‘Sˆõ‚ª¡‰ñ‚Ì‚æ‚¤‚Èƒ[ƒNƒVƒ‡ƒbƒv‚ğ‚Ü‚½‚â‚è‚½‚¢‚Æv‚¤‚©h‚Æ‚¢‚¤–â‚¢‚É‘Î‚µ‚ÄQ‰ÁÒ‘Sˆõ‚ª‚â‚è‚½‚¢‚Æ‰ñ“š‚µ‚½B‚³‚ç‚ÉA•ÛŒìÒ‚É‘Î‚µ‚Ägq‹Ÿ‚ÉƒRƒ“ƒsƒ…[ƒ^‚Ìˆµ‚¢•û‚ğŠw‚Î‚¹‚½‚¢Šú‚Í‚¢‚Â‚© h‚Æ‚¢‚¤–â‚¢‚É‘Î‚µ‚Ä”¼”ˆÈã‚Ì‰ñ“šÒ‚ª¬Šw¶‚Ì‚¤‚¿‚©‚ç‚Æ‰ñ“š‚µ‚½B‚»‚±‚Å„‚½‚¿‚ÍA‚à‚Á‚Æ‘½‚­‚Ì¬Šw¶‚ÉƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¢‚½‚¢‚Æv‚¢AŠˆ“®‚ğ‚Í‚¶‚ß‚½B\\
+@Šy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¤ˆ×‚ÉA„‚½‚¿‚Í LEGO Mindstorms ‚Æ‚¢‚¤LEGOĞ‚ª’ñ‹Ÿ‚µ‚Ä‚¢‚éƒŒƒSƒuƒƒbƒN‚ğ—˜—p‚µ‚½î•ñHŠwA‰ÈŠwA”Šw‚È‚Ç—lX‚Èƒe[ƒ}‚ÌŠwK‚É–ğ—§‚Âƒƒ{ƒbƒg‹³Ş‚ğ—˜—p‚µ‚æ‚¤‚Æl‚¦‚½B‚»‚Ì——R‚Æ‚µ‚ÄAg¬Šw¶‚Íƒƒ{ƒbƒg‚ªD‚«‚È‚Ì‚Å‚Í‚È‚¢‚©h‚Æl‚¦‚½‚©‚ç‚Å‚ ‚éB‚Ü‚½ALEGO Mindstorms ‚Ì‘ÎÛ”N—î‚Í¬Šw¶‚©‚ç‚Æ‚Í‚È‚Á‚Ä‚¢‚é‚ªAÀÛ‚É¬Šw¶‚ªˆµ‚¤‚É‚Í“ï‚µ‚¢‚Æ„‚½‚¿‚Íl‚¦A‚à‚Á‚Æ LEGO Mindstorms ‚ğ¬Šw¶‚ªˆµ‚¢‚â‚·‚­‚È‚ê‚ÎAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¦‚é‚Æl‚¦ALEGO Mindstorms ‚ğ—˜—p‚µ‚½B
 \bunseki{‰_ˆä®l}
 
-\section{ŠY“–•ª–ì‚ÌŒ»óE]—ˆ—á}\label{sec:mokuteki}
-„’B‚Í”ŸŠÙsÂ”NƒZƒ“ƒ^[‚ªåÃ‚µ‚½¬Šw¶‚ğ‘ÎÛ‚É‚µ‚½ Scratch ‚ğ—˜—p‚µ‚ÄŠyŠí‚ğì‚éƒ[ƒNƒVƒ‡ƒbƒv‚ğŒ©Šw‚µ‚½[3]B‚»‚±‚Å‚Í¬Šw¶‚ª–²’†‚É‚È‚Á‚Ä Scratch ‚ÅğŒ•¶‚âƒ‹[ƒvˆ—‚ğg‚¢‚È‚ª‚çƒLƒƒƒ‰ƒNƒ^[‚ğ“®‚©‚µ‚Ä‚¢‚½B\\
-@‚³‚ç‚ÉAƒ[ƒNƒVƒ‡ƒbƒvI—¹‚És‚Á‚½ƒAƒ“ƒP[ƒg‚É‚æ‚é‚ÆAgQ‰Á‚µ‚½¬Šw¶‘Sˆõ‚ª¡‰ñ‚Ì‚æ‚¤‚Èƒ[ƒNƒVƒ‡ƒbƒv‚ğ‚Ü‚½‚â‚è‚½‚¢‚Æv‚¤‚©h‚Æ‚¢‚¤–â‚¢‚É‘Î‚µ‚Ä‚â‚è‚½‚¢‚Æ‰ñ“š‚µ‚½B‚³‚ç‚ÉA•ÛŒìÒ‚É‘Î‚µ‚Ägq‹Ÿ‚ÉƒRƒ“ƒsƒ…[ƒ^‚Ìˆµ‚¢•û‚ğŠw‚Î‚¹‚½‚¢Šú‚Í‚¢‚Â‚© h‚Æ‚¢‚¤–â‚¢‚É‘Î‚µ‚Ä”¼”ˆÈã‚Ì‰ñ“šÒ‚ª¬Šw¶‚Ì‚¤‚¿‚©‚ç‚Æ‰ñ“š‚µ‚½B
+\section{“–ŠY•ª–ì‚ÌŒ»óE]—ˆ—á}\label{sec:mokuteki}
+Œ»İAScratch ‚Æ‚¢‚¤ƒvƒƒOƒ‰ƒ~ƒ“ƒOŒ¾Œê‚ğ—˜—p‚µ‚½ƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Ìƒ[ƒNƒVƒ‡ƒbƒv‚ª’–Ú‚³‚ê‚Ä‚¢‚éBScratch ‚Æ‚Í2006 ”N‚É MIT ƒƒfƒBƒAƒ‰ƒ{‚ªŠJ”­‚µ‚½q‹ŸŒü‚¯‚ÌƒvƒƒOƒ‰ƒ~ƒ“ƒOŒ¾Œê‚ÅAğŒ•ªŠò‚âƒ‹[ƒv‚È‚Ç‚ª‘‚©‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğƒhƒ‰ƒbƒOƒAƒ“ƒhƒhƒƒbƒv‚Å‘g‚İ‡‚í‚¹‚é‚±‚Æ‚Å‹Šo“I‚ÉƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğŠw‚Ô‚±‚Æ‚ªo—ˆ‚éB—á‚¦‚ÎANPO –@lCANVAS ‚Í“Œ–k’n•û‚É‚ ‚é¬’†ŠwZAŒö–¯ŠÙ‚È‚Ç‚ğ’†S‚É Scratch ‚ÅƒIƒŠƒWƒiƒ‹‚ÌƒQ[ƒ€‚ğì‚éƒ[ƒNƒVƒ‡ƒbƒv‚ğŠJÃ‚µ‚Ä‚¨‚èA¡‚Ü‚Å‚É 26 ‰ñA–ñ 560 l‚Ìq‚Ç‚à‚½‚¿‚ªQ‰Á‚µ‚½[2]B\\
+@‚Ü‚½A•ŸˆäŒ§I]s‚ÌÉ‰A¬ŠwZ‚Å‚Í¬Šw 4 ”N¶E6 ”N¶‚ğ‘ÎÛ‚É LEGO Mindstorms ‚ğ—˜—p‚µ‚½‰ÛŠOö‹Æ‚ªs‚í‚ê‚½[3]B4 ”N¶‚ÍŠ£“d’r‚Æƒ‚[ƒ^[‚Å‘–‚é©“®Ô‚ğì¬‚µ‚Ä‘–‚ç‚¹‚é‚È‚©‚ÅAŠ£“d’r‚Ì‚Â‚È‚¬•û‚â”‚ğ•Ï‚¦‚Ä‚Ç‚¤‚µ‚½‚ç‘‚­‘–‚ç‚¹‚é‚±‚Æ‚ªo—ˆ‚é‚©‚ğ’²‚×‚é‚±‚Æ‚Å“d‹C‚Ì“­‚«‚ğŠw‚ñ‚¾B6 ”N¶‚Í“d¥Î‚Ì“±ü‚ğ—p‚¢‚ÄA“d¥Î‚Ì‹­‚³‚Ì•Ï‰»‚ğ’²‚×AŒ©‚¢‚¾‚µ‚½–â‘è‚ğ‘½–Ê“I‚É’Ç‹†‚µ‚½‚èƒƒ{ƒbƒg‚Ã‚­‚è‚ğ‚µ‚½‚è‚·‚éŠˆ“®‚ğ’Ê‚µ‚ÄA“d—¬‚Ì“­‚«‚É‚Â‚¢‚Ä‚ÌŒ©•û‚âl‚¦•û‚ğŠw‚ñ‚¾B
 
 \bunseki{‰_ˆä®l}
 
 \section{Œ»ó‚É‚¨‚¯‚é–â‘è“_}
-‚±‚ÌƒAƒ“ƒP[ƒg‚ÌŒ‹‰Ê‚©‚çAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚É‹»–¡‚ª‚ ‚é¬Šw¶‚â¬Šw¶‚Ì“à‚©‚çƒRƒ“ƒsƒ…[ƒ^‚É‚Â‚¢‚ÄŠw‚Î‚¹‚½‚¢•ÛŒìÒ‚ª‚¢‚é‚±‚Æ‚ª‚í‚©‚é‚ªA“ú–{‚Ì‹`–±‹³ˆç‚É‚ÍƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Ìö‹Æ‚ª‚È‚­Aƒ[ƒNƒVƒ‡ƒbƒv‚Í­l”‚µ‚©Q‰Á‚Å‚«‚¸A•p”É‚ÉŠJÃ‚³‚ê‚é‚à‚Ì‚Å‚Í‚È‚¢‚½‚ß¬Šw¶‚ªƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÉG‚ê‚é‹@‰ï‚ª­‚È‚¢B\\
+Q‰Á‚µ‚½ƒ[ƒNƒVƒ‡ƒbƒv‚ÅÀ{‚µ‚½ƒAƒ“ƒP[ƒg‚ÌŒ‹‰Ê‚©‚çAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚É‹»–¡‚ª‚ ‚é¬Šw¶‚â¬Šw¶‚Ì“à‚©‚çƒRƒ“ƒsƒ…[ƒ^‚É‚Â‚¢‚ÄŠw‚Î‚¹‚½‚¢•ÛŒìÒ‚ª‚¢‚é‚±‚Æ‚ª‚í‚©‚é‚ªA“ú–{‚Ì‹`–±‹³ˆç‚É‚ÍƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Ìö‹Æ‚ª‚È‚­Aƒ[ƒNƒVƒ‡ƒbƒv‚Í­l”‚µ‚©Q‰Á‚Å‚«‚¸A•p”É‚ÉŠJÃ‚³‚ê‚é‚à‚Ì‚Å‚Í‚È‚¢‚½‚ß¬Šw¶‚ªƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÉG‚ê‚é‹@‰ï‚ª­‚È‚¢B\\
 @‚»‚±‚ÅA–{ƒOƒ‹[ƒv‚Í¬Šw¶‚ªƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÉG‚ê‚é‹@‰ï‚ğ‘‚â‚·‚½‚ß‚ÉAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Ìƒ[ƒNƒVƒ‡ƒbƒv‚ÌŠé‰æEÀ{‚ğ‚·‚éB
 
 \bunseki{‰_ˆä®l}
@@ -128,7 +136,7 @@ Programming, Elementary school students, Workshop, LEGO Mindstorms, iPad
 \section{‰Û‘è‚ÌŠT—v}
 
 –{ƒOƒ‹[ƒv‚Ì‰Û‘è‚ÍƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Ìƒ[ƒNƒVƒ‡ƒbƒv‚ğŠé‰æEÀ{‚·‚é‚±‚Æ‚Å‚ ‚éB‚»‚ê‚ğÀ{‚·‚é‚½‚ß‚Ì€”õ‚Æ‚µ‚ÄLEGO Mindstorms‚ğ§Œä‚·‚é‚½‚ß‚Ìƒ^ƒuƒŒƒbƒgƒAƒvƒŠ‚Æƒ[ƒNƒVƒ‡ƒbƒv‚ÌŠé‰æ‘‚ğì¬‚·‚éB‚Ü‚½Aì¬‚µ‚½Šé‰æ‘‚ğ‚à‚Æ‚É¬Šw¶‚ğ‘ÎÛ‚Éƒ[ƒNƒVƒ‡ƒbƒv‚ğs‚¤B‚±‚Ìƒ[ƒNƒVƒ‡ƒbƒv‚Å“¾‚½¬Šw¶‚ÌˆÓŒ©‚ğ‚à‚Æ‚ÉŠé‰æ‘‚ÌC³‚ğ‚·‚éB\\
-@ƒ^ƒuƒŒƒbƒgƒAƒvƒŠ‚Å‚Íƒ‰ƒWƒRƒ“Š´Šo‚Å‘€ì‚Å‚«‚é‹@”\‚Æˆ—‚ª‘‚©‚ê‚½ƒuƒƒbƒN‚ğ‘g‚İ‡‚í‚¹‚é‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒOo—ˆ‚é‹@”\‚ğÀ‘•‚·‚éB‚»‚ê‚¼‚ê‚Ì‹@”\‚Íƒ[ƒNƒVƒ‡ƒbƒv‚ğs‚È‚Á‚½‚É‚Ü‚¸Aƒ‰ƒWƒRƒ“‹@”\‚ÅLEGO Mindstorms‚Ì‘€ì‚ÉŠµ‚ê‚Ä‚à‚ç‚¢A‚»‚ÌŒãƒvƒƒOƒ‰ƒ~ƒ“ƒO‹@”\‚Å—^‚¦‚ç‚ê‚½‰Û‘è‚ğ‰ğŒˆ‚·‚é‚½‚ß‚Ìˆ—‚ğƒvƒƒOƒ‰ƒ€‚µ‚Ä‚à‚ç‚¤‚±‚Æ‚ğ‘z’è‚µ‚Ä‚¢‚éB‚Ü‚½A‰Û‘è‚Ì“à—e‚ÍŒ»’iŠK‚Å‚ÍLEGO Mindstorms‚Ì“®‚«‚ğ—˜—p‚µ‚ÄŠG‚ğ•`‚­‰Û‘èA–À˜H‚ğ’Eo‚·‚é‰Û‘è‚ª‹“‚°‚ç‚ê‚Ä‚¢‚éB
+@ƒ^ƒuƒŒƒbƒgƒAƒvƒŠ‚Å‚Íƒ‰ƒWƒRƒ“Š´Šo‚Å‘€ì‚Å‚«‚é‹@”\‚Æˆ—‚ª‘‚©‚ê‚½ƒuƒƒbƒN‚ğ‘g‚İ‡‚í‚¹‚é‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğs‚¦‚é‹@”\‚ğÀ‘•‚·‚éB‚»‚ê‚¼‚ê‚Ì‹@”\‚Íƒ[ƒNƒVƒ‡ƒbƒv‚ğs‚Á‚½‚ÉA‚Ü‚¸ƒ‰ƒWƒRƒ“‹@”\‚ÅLEGO Mindstorms‚Ì“®‚«‚ğ’m‚Á‚Ä‚à‚ç‚¢A‚»‚ÌŒãƒvƒƒOƒ‰ƒ~ƒ“ƒO‹@”\‚Å—^‚¦‚ç‚ê‚½‰Û‘è‚ğ‰ğŒˆ‚·‚é‚½‚ß‚Ìˆ—‚ğƒvƒƒOƒ‰ƒ€‚µ‚Ä‚à‚ç‚¤‚±‚Æ‚ğ‘z’è‚µ‚Ä‚¢‚éB‚Ü‚½AŠé‰æ‚Ì“à—e‚ÍŒ»’iŠK‚Å‚ÍLEGO Mindstorms‚Ì“®‚«‚ğ—˜—p‚µ‚ÄŠG‚ğ•`‚­Šé‰æ‚ğ‘z’è‚µ‚Ä‚¢‚éB
 
 \bunseki{‰_ˆä®l}
 
@@ -467,30 +475,28 @@ TA‚³‚ñ‚ªŠé‰æ‚µ‚Ä‚­‚ê‚½•×‹­‰ï‚ÉQ‰Á‚µAŠJ”­‚ÌŠî‘b‚Æ‚È‚éObjective-CŒ¾Œê‚ÆXcode‚É‚Â
 \bunseki{”Œ´¹}
 
 \subsection{ƒ[ƒNƒVƒ‡ƒbƒv‚ÌˆÄo‚µ}
-ƒ[ƒNƒVƒ‡ƒbƒv‚ğŠJÃ‚·‚é‚É‚ ‚½‚Á‚ÄA‚Ü‚¸¬Šw¶‚ª‚Ç‚Ì‚æ‚¤‚ÈŠé‰æ“à—e‚Å‚ ‚ê‚ÎAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğŠy‚µ‚ñ‚Ås‚¤‚±‚Æ‚ª‚Å‚«‚é‚Ì‚©‚ğ‚Æ‚¢‚¤‚±‚Æ‚ğl‚¦‚½B‚»‚±‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚É‹»–¡‚ğ‚Á‚Ä‚à‚ç‚¤ˆ×‚ÉA¬Šw¶‚ª‚Ç‚Ì‚æ‚¤‚ÈŠé‰æ“à—e‚ğŠy‚µ‚Ş‚±‚Æ‚ªo—ˆ‚é‚Ì‚©‚Æ‚¢‚¤‚±‚Æ‚ğd—v‹‚µ‚ÄƒAƒCƒfƒAo‚µ‚ğs‚Á‚½B‚»‚±‚ÅAŒ´“c‹³ö‚ªåÃ‚µ‚½Scracth‚ğ—p‚¢‚½ƒvƒƒOƒ‰ƒ~ƒ“ƒOƒ[ƒNƒVƒ‡ƒbƒv‚ğ‚à‚Æ‚ÉA¬Šw¶‚ªŠy‚µ‚¢‚ÆŠ´‚¶‚é—v‘f‚Ìô‚¢o‚µ‚ğs‚Á‚½B‚»‚ÌŒ‹‰ÊA¬Šw¶‚Íu©•ª‚Ì‘z‘œ—Í‚ğŠˆ‚©‚µ‚Ä‚à‚Ì‚ğì‚év‚±‚Æ‚ğˆê”ÔŠy‚µ‚ñ‚Å‚¢‚½‚Æl‚¦‚½B‚»‚±‚ÅA¬Šw¶‚ªl‚¦‚Ä“š‚¦‚ğo‚·‰Û‘è‚ğ—^‚¦‚ê‚ÎŠy‚µ‚Ş‚±‚Æ‚ª‚Å‚«‚é‚Æl‚¦‚½B‚»‚Ìl‚¦‚ğ‚à‚Æ‚ÉŠé‰æ“à—e‚Æ‚µ‚ÄˆÈ‰º‚Ì7‚Â‚ÌƒAƒCƒfƒA‚ğl‚¦‚½B\\
-\subsubsection{ˆÄ1 LEGO Mindstorms‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒOƒŒ[ƒX}
+ƒ[ƒNƒVƒ‡ƒbƒv‚ğŠJÃ‚·‚é‚É‚ ‚½‚Á‚ÄA‚Ü‚¸¬Šw¶‚ª‚Ç‚Ì‚æ‚¤‚ÈŠé‰æ“à—e‚Å‚ ‚ê‚ÎAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğŠy‚µ‚ñ‚Ås‚¤‚±‚Æ‚ª‚Å‚«‚é‚Ì‚©‚ğ‚Æ‚¢‚¤‚±‚Æ‚ğl‚¦‚½B‚»‚±‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚É‹»–¡‚ğ‚Á‚Ä‚à‚ç‚¤ˆ×‚ÉA¬Šw¶‚ª‚Ç‚Ì‚æ‚¤‚ÈŠé‰æ“à—e‚ğŠy‚µ‚Ş‚±‚Æ‚ªo—ˆ‚é‚Ì‚©‚Æ‚¢‚¤‚±‚Æ‚ğd—v‹‚µ‚ÄƒAƒCƒfƒAo‚µ‚ğs‚Á‚½B‚Ü‚¸‚ÍA„‚½‚¿‚ªQ‰Á‚µ‚½Œ´“c‹³ö‚ªåÃ‚µ‚½Scracth‚ğ—p‚¢‚½ƒvƒƒOƒ‰ƒ~ƒ“ƒOƒ[ƒNƒVƒ‡ƒbƒv‚ğ‚à‚Æ‚ÉA¬Šw¶‚ªŠy‚µ‚¢‚ÆŠ´‚¶‚é—v‘f‚Ìô‚¢o‚µ‚ğs‚Á‚½Bƒ[ƒNƒVƒ‡ƒbƒv‚É‚Ä¬Šw¶‚ÍA"‚Ç‚Ì‚æ‚¤‚È•\Œ»‚ª©•ª‚½‚¿‚ç‚µ‚¢‚à‚Ì‚ª‚Å‚«‚é‚Ì‚©"‚Æ‚¢‚¤“_‚ÅŠy‚µ‚ñ‚Å‚¢‚½‚ÆŒ©‚ÄÛ‚ê‚½B‚Ü‚½ƒ[ƒNƒVƒ‡ƒbƒv‚ÉƒAƒ“ƒP[ƒg‚ğs‚¢A"¡“ú‚Ìƒ[ƒNƒVƒ‡ƒbƒv‚ÅŠy‚µ‚©‚Á‚½•”•ª‚Í‰½‚Å‚·‚©H"‚Æ‚¢‚¤–â‚É‘Î‚µ‚ÄA"‚İ‚ñ‚È‚Ì‘O‚Å©•ª‚Ì‚à‚Ì‚ğ”­•\‚µ‚Ä‚¢‚é‚Ì‚ªŠy‚µ‚¢"‚Æ‚¢‚¤‰ñ“š‚ğ‚µ‚Ä‚­‚ê‚½¬Šw¶‚ª‘½‚©‚Á‚½B‚»‚±‚ÅA¬Šw¶‚Í"©•ª‚Ì‘z‘œ—Í‚ğŠˆ‚©‚µ‚Ä‚à‚Ì‚ğì‚è”­•\‚·‚é"‚±‚Æ‚ğˆê”ÔŠy‚µ‚ñ‚Å‚¢‚½‚Æl‚¦‚½B‚»‚±‚ÅA¬Šw¶‚ªl‚¦‚Ä“š‚¦‚ğo‚·‰Û‘è‚ğ—^‚¦‚ê‚ÎŠy‚µ‚Ş‚±‚Æ‚ª‚Å‚«‚é‚Æl‚¦‚½B‚»‚Ìl‚¦‚ğ‚à‚Æ‚ÉŠé‰æ“à—e‚Æ‚µ‚ÄˆÈ‰º‚Ì7‚Â‚ÌƒAƒCƒfƒA‚ğl‚¦‚½B\\
+\subsubsection{ˆÄ1 LEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚ÄƒŒ[ƒX‚ğ‚µ‚æ‚¤}
 
-ƒR[ƒX‚ğì¬‚µA‚»‚ÌƒR[ƒX‚ğLEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä‘–‚ç‚¹‚éBƒS[ƒ‹‚Ü‚Å‚É‚Ç‚Ì‚­‚ç‚¢‚ÌŠÔ‚ª‚©‚©‚é‚Ì‚©‚Å‹£‚¢‡‚¤B
-\subsubsection{ˆÄ2 LEGO Mindstorms‚Å–À˜H‚©‚ç’Eo}
+LEGO Mindstorms‚ª‘–‚éƒR[ƒX‚ğì¬‚µA‚»‚ÌƒR[ƒX‚ğLEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä‘–‚ç‚¹‚éBƒR[ƒX‚ÍáŠQ•¨‚âƒJ[ƒu‚ğì¬‚µA‚»‚ÌáŠQ•¨‚ğ‚æ‚¯‚ÄƒS[ƒ‹‚Ü‚Å–Úw‚µ‚Ä‚à‚ç‚¤B¬Šw¶‚É‚ÍAƒS[ƒ‹‚É‚Ç‚Ì‚­‚ç‚¢‚ÌŠÔ‚ª‚©‚©‚é‚Ì‚©‚Å‹£‚¢‚ ‚Á‚Ä‚à‚ç‚¤B‚±‚ÌˆÄ‚ÍA¬Šw¶‚Ì“Æ©‚Ì•\Œ»‚ª‚µ‚É‚­‚¢‚Ì‚Å‚Í‚È‚¢‚©‚Æl‚¦Aƒ{ƒc‚Æ‚È‚Á‚½B
+\subsubsection{ˆÄ2 LEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä–À˜H‚©‚ç’Eo‚ğ‚µ‚æ‚¤}
 
-–À˜H‚ğì¬‚µA‚»‚Ì–À˜H‚ğ“®‚«‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä’Eo‚µ‚Ä‚à‚ç‚¤B’Eo‚Ü‚Å‚Ì—¬‚ê‚ÅƒZƒ“ƒT‚ğ—p‚¢‚é‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¤B
-\subsubsection{ˆÄ3 LEGO Mindstorms‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒOƒpƒŒ[ƒh}
+–À˜H‚ğì¬‚µA‚»‚Ì–À˜H‚ğLEGO Mindstorms‚Ì“®‚«‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä’Eo‚µ‚Ä‚à‚ç‚¤B‚Ü‚¸Aƒ‰ƒWƒRƒ“‹@”\‚Å–À˜H‚ğÀÛ‚É’Eo‚µ‚Ä‚à‚ç‚¢A‚»‚ÌŒãƒvƒƒOƒ‰ƒ~ƒ“ƒO‹@”\‚ÅLEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µA–À˜H‚ğ’Eo‚µ‚Ä‚à‚ç‚¤B’Eo‚·‚é‚Ü‚Å‚É"•Ç‚É‚Ô‚Â‚©‚Á‚½‚ç››‚·‚é"‚È‚Ç‚Ìƒ^ƒbƒ`ƒZƒ“ƒT‚ğ—p‚¢‚½‚èA’Eo‚Ü‚Å‚Ì—¬‚ê‚ğl‚¦‚Ä‚à‚ç‚¤‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¤B
+\subsubsection{ˆÄ3 LEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚ÄƒpƒŒ[ƒh‚ğ‚µ‚æ‚¤}
 
-LEGO Mindstorms‚ğD‚«‚È‚æ‚¤‚ÉŒ©‚½–Ú‚ğ•Ï‚¦‚Ä‚à‚ç‚¤B‚Ü‚½AƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Åƒ‰ƒCƒg‚È‚Ç‚Ì‹@”\‚ğì‚Á‚Ä‚à‚ç‚¤BÅI“I‚Éƒ‰ƒWƒRƒ“‹@”\‚ÅƒpƒŒ[ƒh‚ğ‚µ‚Ä‚à‚ç‚¤B
-\subsubsection{ˆÄ4 LEGO Mindstorms‚Å‚¨ŠG•`‚«}
+LEGO Mindstorms‚ğLEGOƒuƒƒbƒN‚ğ—p‚¢‚ÄD‚«‚È‚æ‚¤‚ÉŒ©‚½–Ú‚ğ•Ï‚¦‚Ä‚à‚ç‚¤B‚»‚ÌŒãAƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Åƒ‰ƒCƒg‚È‚Ç‚Ì‹@”\‚ğì‚Á‚Ä‚à‚ç‚¢ALEGO Mindstorms‚ªˆÃˆÅ‚ÅŒõ‚è‹P‚«AƒpƒŒ[ƒh‚Ì‚æ‚¤‚Èsi‚ªo—ˆ‚é‚æ‚¤‚É‚µ‚Ä‚à‚ç‚¤BÅI“I‚É‚Íƒ‰ƒWƒRƒ“‹@”\‚ÅLEGO Mindstorms‚ğ“®‚©‚µA‘•ü‚µ‚½LEGO Mindstorms‚ÅƒpƒŒ[ƒh‚ğ‚·‚é‚±‚Æ‚Å’B¬Š´‚ğ“¾‚Ä‚à‚ç‚¢AƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¤B
+\subsubsection{ˆÄ4 LEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Ä‚¨ŠG•`‚«‚ğ‚µ‚æ‚¤}
 
 LEGO Mindstorms‚Éƒyƒ“‚ğ‚Â‚¯‚ÄA‰Û‘è‚ÌŠGED‚«‚ÈŠG‚ğ‘‚¢‚Ä‚à‚ç‚¤Bƒ‰ƒWƒRƒ“‚Å‰Û‘è‚ğ•`‚­‚±‚Æ‚Å“®‚«‚ğ’m‚Á‚Ä‚à‚ç‚¢AƒvƒƒOƒ‰ƒ~ƒ“ƒO‚Å‰Û‘è‚ÌŠG‚ğ•`‚­‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÉŠµ‚ê‚Ä‚à‚ç‚¢AƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÅD‚«‚ÈŠG‚ğ•`‚¢‚Ä‚à‚ç‚¤‚±‚Æ‚Å¬Šw¶‚ÉƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğŠy‚µ‚ñ‚Å‚à‚ç‚¤B
-\subsubsection{ˆÄ5 LEGO Mindstorms‚Åƒ{[ƒ‹W‚ß}
+\subsubsection{ˆÄ5 LEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚»‚Äƒ{[ƒ‹‚ğW‚ß‚æ‚¤}
 
-LEGO Mindstorms‚Åƒ{[ƒ‹‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚ÄˆêƒJŠ‚É‚Ç‚Ì‚­‚ç‚¢W‚ß‚ç‚ê‚é‚©‹£‚Á‚Ä‚à‚ç‚¢AƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¤B
-\subsubsection{ˆÄ6 LEGO Mindstorms‚Åƒsƒ^ƒSƒ‰ƒXƒCƒbƒ`}
+LEGO Mindstorms‚ğƒvƒƒOƒ‰ƒ~ƒ“ƒO‚µ‚Äƒ{[ƒ‹‚ğˆêƒJŠ‚É‚Ç‚Ì‚­‚ç‚¢W‚ß‚ç‚ê‚é‚©‹£‚Á‚Ä‚à‚ç‚¤Bƒ{[ƒ‹‚ÍƒZƒ“ƒT‚È‚Ç‚ÅŠ´’m‚µAG‚ê‚½‚ç‚ ‚é“Á’è‚ÌêŠ‚É‰^‚ñ‚Å‚à‚ç‚¤‚Æ‚¢‚Á‚½“à—e‚Å‚ ‚èA‘½‚­W‚ß‚½’B¬Š´‚É‚æ‚èƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¤B‚±‚ÌˆÄ‚ÍAƒvƒƒOƒ‰ƒ~ƒ“ƒO‹@”\‚Å‚Ç‚Ì‚æ‚¤‚Èˆ—‚ğ‚·‚é‚©‚ª‚í‚©‚è‚É‚­‚­Aƒ‰ƒWƒRƒ“‹@”\‚ª–³ˆÓ–¡‚É‚È‚é‚½‚ß‚Éƒ{ƒc‚Æ‚È‚Á‚½
+\subsubsection{ˆÄ6 LEGO Mindstorms‚Åƒsƒ^ƒSƒ‰ƒXƒCƒbƒ`‚ğ‚Â‚­‚ë‚¤}
 
-LEGO Mindstorms‚ğ—p‚¢‚Äƒsƒ^ƒSƒ‰ƒXƒCƒbƒ`‚ğì¬‚µ‚Ä‚à‚ç‚¤Bƒsƒ^ƒSƒ‰ƒXƒCƒbƒ`‚ğì¬‚·‚é‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚¾‚¯‚Å‚È‚­A‚à‚Ìì‚è‚àŠy‚µ‚ñ‚Å‚à‚ç‚¤B
-\subsubsection{ˆÄ7 LEGO Mindstorms‚ÅƒTƒbƒJ[}
+LEGO Mindstorms‚ğ—p‚¢‚Äƒsƒ^ƒSƒ‰ƒXƒCƒbƒ`‚ğì¬‚µ‚Ä‚à‚ç‚¤Bƒsƒ^ƒSƒ‰ƒXƒCƒbƒ`‚ğì¬‚·‚é‚±‚Æ‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚¾‚¯‚Å‚È‚­A‚à‚Ìì‚è‚àŠy‚µ‚ñ‚Å‚à‚ç‚¤B‚±‚ÌˆÄ‚ÍA“–‰‚Ì—\’è‚µ‚Ä‚¢‚½İŒv‚Æ‚Í‘å•‚ÉˆÙ‚È‚é‚½‚ßƒ{ƒc‚Æ‚È‚Á‚½B
+\subsubsection{ˆÄ7 LEGO Mindstorms‚ğ“®‚©‚µ‚ÄƒTƒbƒJ[‚ğ‚µ‚æ‚¤}
 
-LEGO Mindstorms‚ÅƒTƒbƒJ[‚ğ‚µ‚Ä‚à‚ç‚¤BƒTƒbƒJ[‚ÅLEGO Mindstorms‚Ì“®‚«‚ğŠy‚µ‚ñ‚Å‚à‚ç‚¤B
-
-@\\
+LEGO Mindstorms‚ÅƒTƒbƒJ[‚ğ‚µ‚Ä‚à‚ç‚¤BƒTƒbƒJ[ƒR[ƒg‚ğì¬‚µALEGO Mindstorms‚Åˆê‘Îˆê‚ÌƒTƒbƒJ[‚ğs‚Á‚Ä‚à‚ç‚¤BƒTƒbƒJ[‚ğs‚¤‚±‚Æ‚ÅLEGO Mindstorms‚Ì“®‚«‚ğŠy‚µ‚ñ‚Å‚à‚ç‚¤B‚±‚ÌˆÄ‚ÍAƒvƒƒOƒ‰ƒ~ƒ“ƒO‹@”\‚Å‚ÍŠy‚µ‚Ş‚±‚Æ‚ªo—ˆ‚¸Aƒ‰ƒWƒRƒ“‹@”\‚Ì‚İ‚Ì—V‚Ñ‚Æ‚È‚é‚Ì‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠy‚µ‚³‚ğ’m‚Á‚Ä‚à‚ç‚¦‚È‚¢‚Æ‚¢‚¤‚±‚Æ‚Åƒ{ƒc‚Æ‚È‚Á‚½B\\
 @‚»‚ÌŠé‰æ“à—e‚Ì’†‚©‚ç‰_ˆäE”Œ´‚ÅA–À˜HˆÄEƒpƒŒ[ƒhˆÄE‚¨ŠG•`‚«ˆÄ‚Ì3‚Â‚ÌƒAƒCƒfƒA‚ª¬Šw¶‚ªe‚µ‚İ‚â‚·‚­Šy‚µ‚¢ƒAƒCƒfƒA‚Å‚ ‚é‚Æl‚¦A‚±‚Ì3‚Â‚Ì’†‚©‚çƒOƒ‹[ƒv“à‚ÅˆÓŒ©‚ğo‚µ‚ ‚Á‚½B\\
 @‚Ü‚¸–À˜HˆÄ‚ÍAu–À˜H‚ğ‰ğ‚­‰ß’ö‚ÅƒZƒ“ƒT‚ğ—˜—p‚·‚é‚Ì‚ÅƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğŠw‚Ñ‚â‚·‚¢v‚âu–À˜H‚ğ‰ğ‚­‚Æ‚¢‚¤l‚¦‚Í–Ê”’‚¢v‚Æ‚¢‚Á‚½ˆÓŒ©‚ª‚ ‚Á‚½‚ªAu¬Šw¶‚ªƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğ‚·‚é‚É‚Í­‚µ“ïˆÕ“x‚ª‚‚·‚¬‚é‚Ì‚Å‚Í‚È‚¢‚©v‚âu–À˜H‚Ìê‡AƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ğ‚·‚é‚Æ‚«‚µ‚©‘z‘œ—Í‚ğŠˆ‚©‚µ‚Ä‚¢‚È‚¢‚Ì‚Å‚Í‚È‚¢‚©v‚Æ‚¢‚Á‚½ˆÓŒ©‚ª‚ ‚Á‚½B\\
 @Ÿ‚ÉƒpƒŒ[ƒhˆÄ‚Å‚ÍAu¬Šw¶‚ªLEGO Mindstorms‚ğ‘g‚İ—§‚Ä‚é‚Ì‚ÅA‘z‘œ—Í‚ğŠˆ‚©‚µ‚â‚·‚¢v‚âuƒOƒ‹[ƒv’PˆÊ‚ÅLEGO Mindstorms‚ğ‘•ü‚·‚é‚ªAÅŒã‚Í‘S‘Ì‚Å“®‚©‚·‚Ì‚Å‘Sˆõ‚Åì‚Á‚½’B¬Š´‚ğŠ´‚¶‚év‚Æ‚¢‚Á‚½ˆÓŒ©‚ª‚ ‚Á‚½‚ªAuÅ‰‚ÌİŒv‚Æ‘å‚«‚­•Ï‚í‚Á‚Ä‚µ‚Ü‚¤v‚âuŒõ‚ğ”­‚·‚éƒZƒ“ƒT‚ª‚È‚¢v‚Æ‚¢‚Á‚½ˆÓŒ©‚©‚çAƒpƒŒ[ƒhˆÄ‚Í“ï‚µ‚¢‚Æ‚È‚Á‚½B\\
@@ -800,9 +806,9 @@ CŒ¾Œê‚ğƒIƒuƒWƒFƒNƒgwŒüŒ¾Œê‚ÉŠg’£‚³‚¹‚½‚à‚ÌBiPhoneƒAƒvƒŠ‚Ìì¬‚É—p‚¢‚ç‚ê‚éŒ¾Œê‚
 
 % Ql•¶Œ£
 \begin{thebibliography}{3}
- \bibitem {1} NPO –@l CANVAS, gƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÅA©•ª‚¾‚¯‚ÌƒQ[ƒ€‚ğì‚ë‚¤! ƒvƒƒOƒ‰ƒ~ƒ“ƒOƒ[ƒNƒVƒ‡ƒbƒvh, Internet:http://www.canvas.ws/p-ws/, [July. 21, 2014].
- \bibitem{2} gÉ‰A¬ŠwZ —lh, Internet: http://www.afrel.co.jp/academy/overview/case3, [July. 17, 2014].
- \bibitem {3} ”ŸŠÙsÂ”NƒZƒ“ƒ^[, g¬Šw¶‚ªƒvƒƒOƒ‰ƒ~ƒ“ƒO‚É’§íIh, Internet: http://blog.canpan.info/hako-youth/search/?keyword=Scratch,  May. 20, 2014, [July. 17, 2014].
+ \bibitem {1} ”ŸŠÙsÂ”NƒZƒ“ƒ^[, g¬Šw¶‚ªƒvƒƒOƒ‰ƒ~ƒ“ƒO‚É’§íIh, Internet: http://blog.canpan.info/hako-youth/search/?keyword=Scratch,  May. 20, 2014, [July. 17, 2014].
+ \bibitem {2} NPO –@l CANVAS, gƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÅA©•ª‚¾‚¯‚ÌƒQ[ƒ€‚ğì‚ë‚¤! ƒvƒƒOƒ‰ƒ~ƒ“ƒOƒ[ƒNƒVƒ‡ƒbƒvh, Internet:http://www.canvas.ws/p-ws/, [July. 21, 2014].
+ \bibitem{3} gÉ‰A¬ŠwZ —lh, Internet: http://www.afrel.co.jp/academy/overview/case3, [July. 17, 2014].
 \end{thebibliography}
 
 \end{document}
